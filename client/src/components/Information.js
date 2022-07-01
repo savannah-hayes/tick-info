@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "reusables/Header";
-import NavigateBackButton from "reusables/NavigateBackButton";
 
 import {
   InformationContainer,
@@ -21,7 +20,6 @@ const Information = () => {
     <>
     <InformationContainer>
       <Header/>
-    <NavigateBackButton />
     <InformationWrapper>
       <InfoHeadingOne>Bitten by a tick</InfoHeadingOne>
       <InfoHeadingFour>

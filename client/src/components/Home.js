@@ -13,7 +13,6 @@ import Header from "../reusables/Header";
 import {
   HomeContainer,
   Hero,
-  HeroTextBox,
   HeroParagraph,
   HeroHeading,
   ImageListWrapper,
@@ -57,7 +56,6 @@ const Home = () => {
       <Header />
       <HomeContainer>
         <Hero>
-          <HeroTextBox>
             <HeroHeading>Vaccination Against TBE</HeroHeading>
             <HeroParagraph>
               {" "}
@@ -79,7 +77,6 @@ const Home = () => {
             ) : (
               <div>{""}</div>
             )}
-          </HeroTextBox>
         </Hero>
         {isDesktop ? (
           <InformationWrapper>

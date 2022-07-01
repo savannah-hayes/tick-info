@@ -1,12 +1,7 @@
 import React from "react";
 
-import { 
-  Form, 
-  Select, 
-  DateInput, 
-  BatchInput,
-  Button
-} from "../styled-components/cardForm";
+import styled from "styled-components";
+import { devices } from "../styled-components/globalStyles";
 
 const CardForm = (props) => {
   const { dose, date, batchNumber, setDose, setDate, setBatchNumber, handleForm, dosesArray } = props;
@@ -84,3 +79,55 @@ const CardForm = (props) => {
 };
 
 export default CardForm;
+
+const Inputs = styled.input`
+  margin: 5px;
+  font-family: 'Source Serif Pro';
+
+  @media ${devices.desktop}{
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const Select = styled.select`
+  margin: 5px;
+  font-family: 'Source Serif Pro';
+
+  @media ${devices.desktop}{
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+const DateInput = styled(Inputs)`
+`;
+
+const BatchInput = styled(Inputs)`
+`;
+
+const Button = styled.button`
+  font-family: 'Source Serif Pro';
+  margin: 5px;
+  background-color: lightblue;
+  color: #175C4C;
+  border: 1px solid #175C4C;
+  padding: 5px;
+  border-radius: 2px;
+  font-weight: 700;
+
+  @media ${devices.desktop}{
+    &:hover {
+      cursor: pointer;
+      background-color: #8ec2d1;
+    }
+  }
+`;

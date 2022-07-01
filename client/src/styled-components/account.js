@@ -43,12 +43,6 @@ export const Iconimages = styled.img`
   vertical-align: bottom;
 `;
 
-export const LogoImage = styled.img`
-  @media ${devices.tablet}  {
-    margin: 40px 0 40px 0;
-  };
-`;
-
 export const CapitalizeFullName = styled.p`
   text-transform: capitalize;
 `;

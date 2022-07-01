@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 
 import { displayCities } from "actions/mapActions";
+import Header from "reusables/Header";
 
 import { MapWrapper, HeaderText, InfoText } from "../styled-components/map"
-
-import NavigateBackButton from "reusables/NavigateBackButton";
 
 const Map = () => {
   const [riskAreas, setRiskAreas] = useState([]);
@@ -28,7 +27,7 @@ const Map = () => {
 
   return (
     <MapWrapper>
-        <NavigateBackButton />
+      <Header />
         <HeaderText>High Risk Area Map</HeaderText>
         <InfoText>Click on markers to see city names</InfoText>
       <MapContainer center={[63, 16]} zoom={5} scrollWheelZoom={true}>

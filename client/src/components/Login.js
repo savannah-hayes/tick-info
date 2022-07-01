@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import UserForm from "../reusables/UserForm";
-import NavigateBackButton from "reusables/NavigateBackButton";
 
 import { loginUser } from "../actions/userActions";
 
-import { Spinner } from "../styled-components/globalStyles";
+import { Spinner } from "../styled-components/spinner";
 import { FormContainer, StyledHeading } from "../styled-components/login";
 
 const Login = ({ setLoggedIn }) => {
@@ -36,7 +35,6 @@ const Login = ({ setLoggedIn }) => {
 
   return (
     <FormContainer>
-      <NavigateBackButton />
       <StyledHeading>Log in</StyledHeading>
       <UserForm
         email={email}

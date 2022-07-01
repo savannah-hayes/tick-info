@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import tickInfoLogo from "../assets/tick-info-logo.svg";
+import Header from "reusables/Header";
+
 import house from "../assets/house.svg";
 import bell from "../assets/bell.svg";
 import clipBoard from "../assets/clipboard.svg";
@@ -13,7 +14,6 @@ import {
   CapitalizeName,
   HeaderContainer, 
   Iconimages, 
-  LogoImage, 
   CapitalizeFullName,
   IconsContainer, 
   HomeIcon, 
@@ -54,9 +54,9 @@ const Account = ({ setMode, setMethod, setLoggedIn, setEditAccount, totalDoses }
 
   return (
     <AccountWrapper>
+      <Header />
         <HeaderContainer>
         <h1>Hello, <CapitalizeName>{firstName}</CapitalizeName></h1>
-        <LogoImage src={tickInfoLogo} alt="Tick info logo" />
         <div>
           <CapitalizeFullName>{firstName} {lastName}</CapitalizeFullName>
           <p>{email}</p>

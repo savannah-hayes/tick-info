@@ -1,5 +1,6 @@
 import React from "react";
-import NavigateBackButton from "reusables/NavigateBackButton";
+
+import Header from "reusables/Header"
 
 import SH from "../assets/SH.png";
 import SR from "../assets/SR.png";
@@ -7,7 +8,7 @@ import FA from "../assets/FA.jpeg";
 
 import { 
   ResourcesContainer,
-  Header, 
+  Title, 
   LinkWrapper, 
   ResourcesWrapper, 
   ProfileLinkTag, 
@@ -18,8 +19,8 @@ import {
 const Resources = () => {
   return (
     <ResourcesContainer>
-    <NavigateBackButton />
-    <Header>This Site Was Created By</Header>
+      <Header />
+    <Title>This Site Was Created By</Title>
       <LinkWrapper>
           <ProfileLinkTag
             target="_blank"

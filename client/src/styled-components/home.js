@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import hero from "../assets/heroimg.svg";
 import { devices } from "./globalStyles";
 
 export const HomeContainer = styled.section`
@@ -7,40 +6,8 @@ export const HomeContainer = styled.section`
 `;
 
 export const Hero = styled.div`
-  background-image: url(${hero});
-  height: 400px;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  display: flex;
-  justify-content: center;
-
-  @media ${devices.tablet} {
-    height: 500px;
-    width: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
-    top: 25px;
-  };
-`;
-
-export const HeroTextBox = styled.div`
-  color: #fffbfb;
-  margin-left: 18px;
-  margin-right: 9px;
-  margin-top: 5vh;
-
-  @media ${devices.tablet} {
-    top: 80px;
-    margin-left: 40px;
-    margin-right: 40px;
-  };
-
-  @media ${devices.desktop}{
-    margin-left: 18vw;
-    margin-right: 18vw;
-  };
+  background-color: #175C4C;
+  padding: 40px 150px;
 `;
 
 export const HeroParagraph = styled.p`

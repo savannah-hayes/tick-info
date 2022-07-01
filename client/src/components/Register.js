@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { registerOrEditUser } from "../actions/userActions";
 
 import UserForm from "../reusables/UserForm";
-import NavigateBackButton from "reusables/NavigateBackButton";
 import {FormContainer, StyledHeading} from "../styled-components/login"
 
-import { Spinner } from "../styled-components/globalStyles";
+import { Spinner } from "../styled-components/spinner";
 
 const Register = ({ mode, method, editAccount, setEditAccount }) => {
   const [firstName, setFirstName] = useState("");
@@ -31,7 +30,6 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
   return (
     <>
     <FormContainer>
-      <NavigateBackButton />
         <StyledHeading>{editAccount ? "Edit Profile" : "Create Profile"}</StyledHeading>
       <UserForm
         firstName={firstName}

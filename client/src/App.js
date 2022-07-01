@@ -8,10 +8,10 @@ import Account from "./components/Account";
 import VaccineCard from "./components/VaccineCard";
 import Map from "./components/Map";
 import Reminder from "./components/Reminder";
-import NotFound from "./components/NotFound";
 import Resources from "components/Resources";
 import Information from "components/Information";
 import Images from "components/Images";
+import NotFound from "./components/partials/NotFound";
 
 import { API_URL } from "utils/urls";
 

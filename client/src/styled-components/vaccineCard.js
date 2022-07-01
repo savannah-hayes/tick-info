@@ -4,8 +4,8 @@ import { devices } from "./globalStyles";
 const userWrappers = styled.div`
   width: 320px;
   @media ${devices.mobile} { width: 375px; };
-  @media ${devices.largeMobile} { width: 400px; };
-  @media ${devices.smallTablet} { width: 450px; };
+  @media ${devices.mobileL} { width: 400px; };
+  @media ${devices.tabletS} { width: 450px; };
   @media ${devices.tablet} { width: 500px; };
   @media ${devices.desktop} { width: 600px; };
 `;
@@ -101,8 +101,8 @@ export const Table = styled.table`
   background-color: #fafafa;
 
   @media ${devices.mobile} { width: 375px; };
-  @media ${devices.largeMobile} { width: 400px; };
-  @media ${devices.smallTablet} { width: 450px; };
+  @media ${devices.mobileL} { width: 400px; };
+  @media ${devices.tabletS} { width: 450px; };
   @media ${devices.tablet} { width: 500px; };
   @media ${devices.desktop} { width: 600px; };
 `;
@@ -115,7 +115,7 @@ export const Label = styled.tr`
 export const IconWrapper = styled.th`
   position: relative;
 
-  @media ${devices.largeMobile} {
+  @media ${devices.mobileL} {
     position: absolute;
     margin: 10px 0 0 18px;
   }

@@ -1,10 +1,12 @@
 import React from "react";
-import NavigateBackButton from "reusables/NavigateBackButton";
+
+import Header from "../../reusables/Header"
+
 
 const NotFound = () => {
   return (
     <>
-      <NavigateBackButton />
+      <Header />
       <h1>404 Page not found</h1>
     </>
   )

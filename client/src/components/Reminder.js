@@ -7,15 +7,12 @@ import {
   NextDoseTag 
 } from "../styled-components/reminder"
 
-import NavigateBackButton from "reusables/NavigateBackButton";
-
 const Reminder = ({ nextDose }) => {
   const dateOptions = { month: "long", day: "numeric", year: "numeric" };
   const formattedDate = new Date(nextDose).toLocaleDateString("en-US", dateOptions);
 
   return (
     <ReminderWrapper>
-      <NavigateBackButton />
       <ReminderContainer>
       <Header>Friendly Reminder</Header>
       <p>

@@ -1,6 +1,5 @@
 import React from "react";
 
-import NavigateBackButton from "reusables/NavigateBackButton";
 import Header from "reusables/Header";
 import removal from "../assets/removal.jpg";
 import bite from "../assets/bite.jpg";
@@ -18,13 +17,12 @@ const Images = () => {
   return (
     <>
       <Header />
-      <NavigateBackButton />
       <Title>IMAGES</Title>
       <ImageContainer>
       <ImageWrapper>
         <h2>Tick Bites</h2>
         <div>
-          <TickImage border src={bite} alt=" living tick on a hand" />
+          <TickImage border src={bite} alt="tick sticking out of human skin" />
         </div>
         <Paragraph>Many who suffer from tick-borne infections have not
           even noticed that they have been bitten by a tick. Ticks that bite into the
@@ -35,7 +33,7 @@ const Images = () => {
       <ImageWrapper>
         <h2>Tick Removal</h2>
         <div>
-          <TickImage src={removal} alt=" living tick on a hand" />
+          <TickImage src={removal} alt="tick being removed with tweezers" />
         </div>
         <OrderedList>
           <li>Use a fine-tipped tweezer or a tick remover to remove the tick.</li>

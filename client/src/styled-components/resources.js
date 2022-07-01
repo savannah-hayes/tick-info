@@ -9,7 +9,7 @@ export const ResourcesContainer = styled.section`
   margin: 20px 0 40px 0;
 `;
 
-export const Header = styled.h1`
+export const Title = styled.h1`
   color: #175C4C;
 `;
 

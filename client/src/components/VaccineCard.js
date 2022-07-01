@@ -3,12 +3,11 @@ import React, { useState, useEffect } from "react";
 import { addDose, handleDoseDelete, startCounter } from "../actions/cardActions";
 
 import CardForm from "../reusables/CardForm";
-import NavigateBackButton from "reusables/NavigateBackButton";
 import checkBrowser from "actions/checkBrowser";
 
 import waste from "../assets/waste.png";
 
-import { Spinner } from "../styled-components/globalStyles";
+import { Spinner } from "../styled-components/spinner";
 import {
   CardContainer,
   Header,
@@ -94,7 +93,6 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
   return (
     <CardContainer>
       <Header addTop={dosesArray.length > 0 }>
-        <NavigateBackButton />
         {dosesArray.length > 0 && checkBrowser !== "Safari" && isDesktop
           ?
           <CountdownTitle>Take next dose in...</CountdownTitle>
