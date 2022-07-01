@@ -5,7 +5,7 @@ import {
   ReminderContainer,
   Header, 
   NextDoseTag 
-} from "../styled-components/reminder"
+} from "../styled-components/reminderStyles"
 
 const Reminder = ({ nextDose }) => {
   const dateOptions = { month: "long", day: "numeric", year: "numeric" };

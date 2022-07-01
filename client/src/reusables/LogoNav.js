@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import TickInfoLogo from "../assets/markup-cropped.svg";
-import { Header, Logo } from "styled-components/reusables";
+import { Header, Logo } from "styled-components/reusablesStyles";
 
 const LogoNav = () => {
   const navigate = useNavigate();

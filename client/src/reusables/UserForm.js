@@ -10,7 +10,7 @@ import {
   InputWrapper,
   SubmitButton,
   ButtonWrapper
-} from "../styled-components/userForm";
+} from "styled-components/reusablesStyles";
 
 const UserForm = (props) => {
   const {
@@ -40,7 +40,7 @@ const UserForm = (props) => {
 
   return (
     <InputContainer>
-      <Form onSubmit={handleForm}>
+      <Form column onSubmit={handleForm}>
         {displayOnlyInRegistration && (
           <>
             <InputWrapper htmlFor="firstname">

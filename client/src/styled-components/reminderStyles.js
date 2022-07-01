@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./globalStyles";
+import { devices } from "./mainStyles";
 
 export const ReminderWrapper = styled.section`
   display: flex;

@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { registerOrEditUser } from "../actions/userActions";
 
 import UserForm from "../reusables/UserForm";
-import { FormContainer, StyledHeading } from "../styled-components/login"
+import { FormContainer, StyledHeading } from "../styled-components/loginStyles"
 
-import { Spinner } from "../styled-components/spinner";
+import { Spinner } from "../styled-components/mainStyles";
 
 const Register = ({ mode, method, editAccount, setEditAccount }) => {
   const [firstName, setFirstName] = useState("");

@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 import { displayCities } from "actions/mapActions";
 import LogoNav from "reusables/LogoNav";
 
-import { MapWrapper, HeaderText, InfoText } from "../styled-components/map"
+import { MapWrapper, HeaderText, InfoText } from "../styled-components/mapStyles"
 
 const Map = () => {
   const [riskAreas, setRiskAreas] = useState([]);

@@ -7,7 +7,7 @@ import checkBrowser from "actions/checkBrowser";
 
 import waste from "../assets/waste.png";
 
-import { Spinner } from "../styled-components/spinner";
+import { Spinner } from "../styled-components/mainStyles";
 import {
   CardContainer,
   Header,
@@ -28,7 +28,7 @@ import {
   TrashIcon,
   TableHeader,
   DoseContainer,
-} from "../styled-components/vaccineCard";
+} from "../styled-components/vaccineCardStyles";
 
 const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
   const [dose, setDose] = useState("");

@@ -11,7 +11,7 @@ import {
   OrderedList,
   Paragraph,
   Title
-} from "../styled-components/images";
+} from "../styled-components/imagesStyles";
 
 const Images = () => {
   return (

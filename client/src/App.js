@@ -13,7 +13,7 @@ import Information from "components/Information";
 import Images from "components/Images";
 import NotFound from "./components/partials/NotFound";
 
-import { Spinner } from "styled-components/spinner";
+import { Spinner } from "styled-components/mainStyles";
 import { API_URL } from "utils/urls";
 
 const App = () => {

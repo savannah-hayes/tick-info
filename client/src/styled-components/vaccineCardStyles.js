@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./globalStyles";
+import { devices } from "./mainStyles";
 
 const userWrappers = styled.div`
   width: 320px;

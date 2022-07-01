@@ -22,13 +22,13 @@ import {
   LogInButtonWrapper,
   LogInButton,
   InformationWrapper,
-} from "../styled-components/home";
+} from "../styled-components/homeStyles";
 
 import {
   InfoHeadingThree,
   InfoHeadingFour,
   InfoParagraph,
-} from "../styled-components/information";
+} from "../styled-components/informationStyles";
 
 const Home = () => {
   const navigate = useNavigate();

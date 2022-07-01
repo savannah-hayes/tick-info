@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./globalStyles";
+import { devices } from "./mainStyles";
 
 export const FormContainer = styled.div`
   margin-top: 50px;

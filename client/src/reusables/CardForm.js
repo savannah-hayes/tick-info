@@ -6,7 +6,7 @@ import {
   DateInput,
   BatchInput,
   Button
-} from "styled-components/reusables";
+} from "styled-components/reusablesStyles";
 
 const CardForm = (props) => {
   const { dose, date, batchNumber, setDose, setDate, setBatchNumber, handleForm, dosesArray } = props;

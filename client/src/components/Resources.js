@@ -14,7 +14,7 @@ import {
   ProfileLinkTag, 
   LinkTag, 
   BioPics
-} from "../styled-components/resources";
+} from "../styled-components/resourcesStyles";
 
 const Resources = () => {
   return (

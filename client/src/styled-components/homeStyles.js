@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./globalStyles";
+import { devices } from "./mainStyles";
 
 export const HomeContainer = styled.section`
   width: 100vw;

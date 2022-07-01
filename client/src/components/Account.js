@@ -21,7 +21,7 @@ import {
   VaccineIcon, 
   EditIcon, 
   SignOutIcon 
-} from "../styled-components/account"
+} from "../styled-components/accountStyles"
 
 const Account = ({ setMode, setMethod, setLoggedIn, setEditAccount, totalDoses }) => {
   const navigate = useNavigate();

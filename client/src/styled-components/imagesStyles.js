@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "styled-components/globalStyles";
+import { devices } from "styled-components/mainStyles";
 
 export const ImageContainer = styled.div`
   display: flex;

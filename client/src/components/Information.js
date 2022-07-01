@@ -13,7 +13,7 @@ import {
   NumberedList,
   BulletList,
   ListItem
-} from "../styled-components/information";
+} from "../styled-components/informationStyles";
 
 
 const Information = () => {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./globalStyles";
+import { devices } from "./mainStyles";
 
 const AnimateIcons = styled.li`
   transform:scale(1, 1);
