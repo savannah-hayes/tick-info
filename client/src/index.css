@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: 'Source Serif Pro', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+hr {
+  border: 0;
+  width: 96%;             
+  background-color: gray;
+  height: 1px;
+}
+
+ul {
+	list-style: none;
+  padding: 0;
+}
+
+.leaflet-container {
+  width: 100vw;
+  height: 90vh;
+  margin-top: 10px;
+}
+
+.styledLink {
+  color: #175C4C;
+}
