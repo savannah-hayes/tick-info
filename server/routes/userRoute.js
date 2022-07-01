@@ -1,4 +1,5 @@
 import express from "express";
+
 import { 
   authenticateUser, 
   userPage, getDoses, 
@@ -6,7 +7,7 @@ import {
   loginUser, 
   modifyUser, 
   addDoseToUser
-} from "../controllers/user";
+} from "../controllers/userController.js";
 
 const router = express.Router();
 

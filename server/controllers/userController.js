@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 
-import User from "../models/user.js";
-import Dose from "../models/dose.js";
+import User from "../models/userModel.js";
+import Dose from "../models/doseModel.js";
 
 const passwordEmailValidations = (password, email) => {
   const emailPatternValidation = /^\S+@\S+\.\S{2,}$/g;

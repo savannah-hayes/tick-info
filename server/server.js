@@ -5,9 +5,9 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 import connectDB from "./config/db.js";
-import cityRoutes from "./routes/city.js";
-import userRoutes from "./routes/user.js"; 
-import doseRoutes from "./routes/dose.js";
+import cityRoute from "./routes/cityRoute.js";
+import userRoute from "./routes/userRoute.js"; 
+import doseRoute from "./routes/doseRoute.js";
 
 dotenv.config();
 connectDB();
@@ -30,9 +30,9 @@ app.use((req, res, next) => {
   };
 });
 
-app.use("/", cityRoutes);
-app.use("/", userRoutes);
-app.use("/", doseRoutes);
+app.use("/", cityRoute);
+app.use("/", userRoute);
+app.use("/", doseRoute);
 
 app.get("/", (req, res) => {
   res.json({

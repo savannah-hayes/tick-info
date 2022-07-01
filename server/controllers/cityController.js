@@ -1,4 +1,4 @@
-import City from "../models/city.js";
+import City from "../models/cityModel.js";
 
 export const displayCities = async (req, res) => {
   const cities = await City.find();

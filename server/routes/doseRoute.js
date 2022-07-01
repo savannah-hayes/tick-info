@@ -1,6 +1,10 @@
 import express from "express";
 
-import { createDose, displayDose, deleteDose } from "../controllers/dose.js";
+import { 
+  createDose, 
+  displayDose, 
+  deleteDose 
+} from "../controllers/doseController.js";
 
 const router = express.Router();
 

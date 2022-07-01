@@ -1,5 +1,5 @@
-import Dose from "../models/dose.js";
-import User from "../models/user.js";
+import Dose from "../models/doseModel.js";
+import User from "../models/userModel.js";
 
 export const displayDose = async (req, res) => {
   const userDose = await Dose.find();
