@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { registerOrEditUser } from "../actions/userActions";
 
 import UserForm from "../reusables/UserForm";
-import {FormContainer, StyledHeading} from "../styled-components/login"
+import { FormContainer, StyledHeading } from "../styled-components/login"
 
 import { Spinner } from "../styled-components/spinner";
 
@@ -23,14 +23,10 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
     registerOrEditUser(firstName, lastName, email, password, mode, method, setEditAccount, setLoading, setErrorMessage, navigate)
   };
 
-  if (loading) {
-    return <Spinner></Spinner>
-  };
-
-  return (
-    <>
-    <FormContainer>
-        <StyledHeading>{editAccount ? "Edit Profile" : "Create Profile"}</StyledHeading>
+  return loading
+    ? <Spinner></Spinner>
+    : <FormContainer>
+      <StyledHeading>{editAccount ? "Edit Profile" : "Create Profile"}</StyledHeading>
       <UserForm
         firstName={firstName}
         lastName={lastName}
@@ -45,9 +41,7 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
         editAccount={editAccount}
         setEditAccount={setEditAccount}
       />
-      </FormContainer>
-    </>
-  );
+    </FormContainer>
 };
 
 export default Register;

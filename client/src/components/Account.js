@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Header from "reusables/Header";
+import LogoNav from "reusables/LogoNav";
 
 import house from "../assets/house.svg";
 import bell from "../assets/bell.svg";
@@ -54,7 +54,7 @@ const Account = ({ setMode, setMethod, setLoggedIn, setEditAccount, totalDoses }
 
   return (
     <AccountWrapper>
-      <Header />
+      <LogoNav />
         <HeaderContainer>
         <h1>Hello, <CapitalizeName>{firstName}</CapitalizeName></h1>
         <div>

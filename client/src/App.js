@@ -13,6 +13,7 @@ import Information from "components/Information";
 import Images from "components/Images";
 import NotFound from "./components/partials/NotFound";
 
+import { Spinner } from "styled-components/spinner";
 import { API_URL } from "utils/urls";
 
 const App = () => {
@@ -20,7 +21,6 @@ const App = () => {
   const [method, setMethod] = useState("POST");
   const [nextDose, setNextDose] = useState("");
   const [totalDoses, setTotalDoses] = useState(0);
-  // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [trackDose, setTrackDose] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,39 +31,38 @@ const App = () => {
   const token = JSON.parse(localStorage.getItem("user"))?.accessToken;
 
   useEffect(() => {
+    setLoading(true);
     const options = {
       method: "GET",
       headers: { Authorization: token },
     };
 
-    setLoading(true);
-
-    userId &&
+    if (userId) {
       fetch(API_URL(`user/${userId}`), options)
         .then((response) => response.json())
         .then((doseData) => {
-          setDosesArray(doseData.response.doses);
-          setTotalDoses(doseData.response.doses.length);
-          setNextDose(
-            doseData.response.doses[doseData.response.doses.length - 1]
-              ?.nextDose
-          );
+          const dosesFromData = doseData.response.doses;
+          setDosesArray(dosesFromData);
+          setTotalDoses(dosesFromData.length);
+          setNextDose(dosesFromData[dosesFromData.length - 1]?.nextDose);
         })
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
+    }
   }, [loggedIn, trackDose, token, userId]);
 
-  return (
-    <BrowserRouter>
+  return loading
+    ? <Spinner></Spinner>
+    : <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route
           path="/register"
           element={
-            <Register 
-              mode={mode} 
-              method={method} 
+            <Register
+              mode={mode}
+              method={method}
               editAccount={editAccount}
               setEditAccount={setEditAccount}
             />}
@@ -93,13 +92,12 @@ const App = () => {
         <Route path="/reminder" element={<Reminder nextDose={nextDose} />} />
         <Route path="/map" element={<Map />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to={"/404"} replace />} />
         <Route path="/information" element={<Information />} />
         <Route path="/images" element={<Images />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to={"/404"} replace />} />
       </Routes>
     </BrowserRouter>
-  );
 };
 
 export default App;

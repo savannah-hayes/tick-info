@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "reusables/Header"
+import LogoNav from "reusables/LogoNav"
 
 import SH from "../assets/SH.png";
 import SR from "../assets/SR.png";
@@ -19,7 +19,7 @@ import {
 const Resources = () => {
   return (
     <ResourcesContainer>
-      <Header />
+      <LogoNav />
     <Title>This Site Was Created By</Title>
       <LinkWrapper>
           <ProfileLinkTag

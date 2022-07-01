@@ -8,7 +8,7 @@ import images from "../assets/images.svg";
 import map from "../assets/map.svg";
 import about from "../assets/about.svg";
 
-import Header from "../reusables/Header";
+import LogoNav from "../reusables/LogoNav";
 
 import {
   HomeContainer,
@@ -53,7 +53,7 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+      <LogoNav />
       <HomeContainer>
         <Hero>
             <HeroHeading>Vaccination Against TBE</HeroHeading>

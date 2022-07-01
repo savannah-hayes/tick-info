@@ -86,13 +86,10 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
     return () => clearInterval(interval);
   }, [lastDoseIndex, latestDoseDate, dosesArray]);
 
-  if (loading) {
-    return <Spinner></Spinner>
-  };
-
-  return (
-    <CardContainer>
-      <Header addTop={dosesArray.length > 0 }>
+  return loading
+    ? <Spinner></Spinner>
+    : <CardContainer>
+      <Header addTop={dosesArray.length > 0}>
         {dosesArray.length > 0 && checkBrowser !== "Safari" && isDesktop
           ?
           <CountdownTitle>Take next dose in...</CountdownTitle>
@@ -101,90 +98,90 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
         }
         {dosesArray.length > 0 && checkBrowser !== "Safari" && isDesktop
           ?
-            <CountdownContainer>
-              {countDownYear > 0
-                ?
-                <CountdownWrapper>
-                  <Time>{countDownYear < 10 ? `0${countDownYear}` : countDownYear}</Time>
-                  <Interval>{countDownYear === 1 ? "Year" : "Years"}</Interval>
-                </CountdownWrapper>
-                :
-                null
-              }
-              {countDownMonth > 0
-                ?
-                <CountdownWrapper>
-                  <Time>{countDownMonth < 10 ? `0${countDownMonth}` : countDownMonth}</Time>
-                  <Interval>{countDownMonth === 1 ? "Month" : "Months"}</Interval>
-                </CountdownWrapper>
-                :
-                null
-              }
-              {countDownDay > 0
-                ?
-                <CountdownWrapper>
-                  <Time>{countDownDay < 10 ? `0${countDownDay}` : countDownDay}</Time>
-                  <Interval>{countDownDay === 1 ? "Day" : "Days"}</Interval>
-                </CountdownWrapper>
-                :
-                <CountdownWrapper>
-                  <Time>00</Time>
-                  <Interval>Days</Interval>
-                </CountdownWrapper>
-              }
-              {countDownHour > 0
-                ?
-                <CountdownWrapper>
-                  <Time>{countDownHour < 10 ? `0${countDownHour}` : countDownHour}</Time>
-                  <Interval>{countDownHour === 1 ? "Hour" : "Hours"}</Interval>
-                </CountdownWrapper>
-                :
+          <CountdownContainer>
+            {countDownYear > 0
+              ?
+              <CountdownWrapper>
+                <Time>{countDownYear < 10 ? `0${countDownYear}` : countDownYear}</Time>
+                <Interval>{countDownYear === 1 ? "Year" : "Years"}</Interval>
+              </CountdownWrapper>
+              :
+              null
+            }
+            {countDownMonth > 0
+              ?
+              <CountdownWrapper>
+                <Time>{countDownMonth < 10 ? `0${countDownMonth}` : countDownMonth}</Time>
+                <Interval>{countDownMonth === 1 ? "Month" : "Months"}</Interval>
+              </CountdownWrapper>
+              :
+              null
+            }
+            {countDownDay > 0
+              ?
+              <CountdownWrapper>
+                <Time>{countDownDay < 10 ? `0${countDownDay}` : countDownDay}</Time>
+                <Interval>{countDownDay === 1 ? "Day" : "Days"}</Interval>
+              </CountdownWrapper>
+              :
+              <CountdownWrapper>
+                <Time>00</Time>
+                <Interval>Days</Interval>
+              </CountdownWrapper>
+            }
+            {countDownHour > 0
+              ?
+              <CountdownWrapper>
+                <Time>{countDownHour < 10 ? `0${countDownHour}` : countDownHour}</Time>
+                <Interval>{countDownHour === 1 ? "Hour" : "Hours"}</Interval>
+              </CountdownWrapper>
+              :
 
-                <CountdownWrapper>
-                  <Time>00</Time>
-                  <Interval>Hours</Interval>
-                </CountdownWrapper>
-              }
-              {countDownYear && countDownMonth
-                ?
-                null
-                :
-                <>
-                  {countDownMinute > 0
-                    ?
-                    <CountdownWrapper>
-                      <Time>{countDownMinute < 10 ? `0${countDownMinute}` : countDownMinute}</Time>
-                      <Interval>{countDownMinute === 1 ? "Min" : "Mins"}</Interval>
-                    </CountdownWrapper>
-                    :
-                    <CountdownWrapper>
-                      <Time>00</Time>
-                      <Interval>Mins</Interval>
-                    </CountdownWrapper>
-                  }
-                </>
-              }
-              {countDownMonth
-                ?
-                null
-                :
-                <>
-                  {countDownSecond > 0
-                    ?
-                    <CountdownWrapper>
-                      <Time>{countDownSecond < 10 ? `0${countDownSecond}` : countDownSecond}</Time>
-                      <Interval>Secs</Interval>
-                    </CountdownWrapper>
-                    :
-                    <CountdownWrapper>
-                      <Time>00</Time>
-                      <Interval>Secs</Interval>
-                    </CountdownWrapper>
-                  }
-                </>
-              }
-            </CountdownContainer>
-          : 
+              <CountdownWrapper>
+                <Time>00</Time>
+                <Interval>Hours</Interval>
+              </CountdownWrapper>
+            }
+            {countDownYear && countDownMonth
+              ?
+              null
+              :
+              <>
+                {countDownMinute > 0
+                  ?
+                  <CountdownWrapper>
+                    <Time>{countDownMinute < 10 ? `0${countDownMinute}` : countDownMinute}</Time>
+                    <Interval>{countDownMinute === 1 ? "Min" : "Mins"}</Interval>
+                  </CountdownWrapper>
+                  :
+                  <CountdownWrapper>
+                    <Time>00</Time>
+                    <Interval>Mins</Interval>
+                  </CountdownWrapper>
+                }
+              </>
+            }
+            {countDownMonth
+              ?
+              null
+              :
+              <>
+                {countDownSecond > 0
+                  ?
+                  <CountdownWrapper>
+                    <Time>{countDownSecond < 10 ? `0${countDownSecond}` : countDownSecond}</Time>
+                    <Interval>Secs</Interval>
+                  </CountdownWrapper>
+                  :
+                  <CountdownWrapper>
+                    <Time>00</Time>
+                    <Interval>Secs</Interval>
+                  </CountdownWrapper>
+                }
+              </>
+            }
+          </CountdownContainer>
+          :
           <p>{dosesArray[dosesArray.length - 1]?.nextDose}</p>
         }
         <CardForm
@@ -240,7 +237,6 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
         </Table>
       </CardWrapper>
     </CardContainer>
-  );
 };
 
 export default VaccineCard;

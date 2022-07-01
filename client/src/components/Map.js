@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 
 import { displayCities } from "actions/mapActions";
-import Header from "reusables/Header";
+import LogoNav from "reusables/LogoNav";
 
 import { MapWrapper, HeaderText, InfoText } from "../styled-components/map"
 
@@ -27,7 +27,7 @@ const Map = () => {
 
   return (
     <MapWrapper>
-      <Header />
+      <LogoNav />
         <HeaderText>High Risk Area Map</HeaderText>
         <InfoText>Click on markers to see city names</InfoText>
       <MapContainer center={[63, 16]} zoom={5} scrollWheelZoom={true}>

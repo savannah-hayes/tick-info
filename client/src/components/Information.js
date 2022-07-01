@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "reusables/Header";
+
+import LogoNav from "reusables/LogoNav";
 
 import {
   InformationContainer,
@@ -17,9 +18,8 @@ import {
 
 const Information = () => {
   return (
-    <>
     <InformationContainer>
-      <Header/>
+      <LogoNav />
     <InformationWrapper>
       <InfoHeadingOne>Bitten by a tick</InfoHeadingOne>
       <InfoHeadingFour>
@@ -132,7 +132,6 @@ const Information = () => {
       </InfoParagraph>
       </InformationWrapper>
       </InformationContainer>
-    </>
   );
 };
 export default Information;

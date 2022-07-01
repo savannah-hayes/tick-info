@@ -29,12 +29,9 @@ const Login = ({ setLoggedIn }) => {
     }
   }, [accessToken, navigate]);
 
-  if (loading) {
-    return <Spinner></Spinner>
-  };
-
-  return (
-    <FormContainer>
+  return loading
+    ? <Spinner></Spinner>
+    : <FormContainer>
       <StyledHeading>Log in</StyledHeading>
       <UserForm
         email={email}
@@ -45,7 +42,6 @@ const Login = ({ setLoggedIn }) => {
         handleForm={onUserLogin}
       />
     </FormContainer>
-  );
 };
 
 export default Login;
