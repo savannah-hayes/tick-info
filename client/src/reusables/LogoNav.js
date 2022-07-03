@@ -7,7 +7,6 @@ import { Header, Logo } from "styled-components/reusablesStyles";
 const LogoNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
- 
 
   const handleLogoClick = () => {
     if (location.pathname === "/") {
@@ -19,7 +18,7 @@ const LogoNav = () => {
 
   return (
     <Header>
-      <Logo src={TickInfoLogo} alt="Tick info logo" onClick={handleLogoClick}/>
+      <Logo src={TickInfoLogo} alt="Tick info logo" onClick={handleLogoClick} />
     </Header>
   );
 };
