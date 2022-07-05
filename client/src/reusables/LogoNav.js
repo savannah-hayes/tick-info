@@ -1,25 +1,28 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 
 import TickInfoLogo from "../assets/markup-cropped.svg";
-import { Header, Logo } from "styled-components/reusablesStyles";
+import { 
+  NavContainer, 
+  Logo, 
+  Nav,
+  NavLink
+} from "styled-components/reusablesStyles";
 
 const LogoNav = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogoClick = () => {
-    if (location.pathname === "/") {
-      return console.log(location.pathname);
-    } else {
-      return navigate("/")
-    }
-  };
+  const handleLogoClick = () => setIsOpen(!isOpen);
 
   return (
-    <Header>
+     <NavContainer>
       <Logo src={TickInfoLogo} alt="Tick info logo" onClick={handleLogoClick} />
-    </Header>
+      <Nav isOpen={isOpen}>
+        <NavLink to="/" onClick={() => setIsOpen(!isOpen)}> Home</NavLink>
+        <NavLink to="/account" onClick={() => setIsOpen(!isOpen)}> Profile</NavLink>
+        <NavLink to="/card" onClick={() => setIsOpen(!isOpen)}> Vaccine Card</NavLink>
+        <NavLink to="/resources" onClick={() => setIsOpen(!isOpen)}> Resources</NavLink>
+      </Nav>
+    </NavContainer>
   );
 };
 

@@ -1,18 +1,39 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { devices } from "styled-components/mainStyles";
 
-export const Header = styled.header`
-  height: 90px;
-  
-  // @media ${devices.tablet}{
-  //   height: 120px;
-  // };
+export const NavContainer = styled.header`
+
+`;
+
+export const NavLink = styled(Link)`
+  height: 10px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+`;
+
+export const Nav = styled.div`
+  display: ${props => props.isOpen ? "none" : "flex"};
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  top: 115px;
+  position: absolute;
+  background-color: #D3D3D3;
+  width: 200px;
+  height: 200px;
 `;
 
 export const Logo = styled.img`
   height: 60px;
   width: 140px;
   margin: 10px 10px 0 0;
+ 
+  flex-direction: column;
+  cursor: pointer;
 
   @media ${devices.tablet}{
     height: 120px;

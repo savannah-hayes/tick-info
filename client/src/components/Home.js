@@ -69,13 +69,9 @@ const Home = () => {
                 Wear a long-sleeved shirt, long trousers, and high shoes or boots
                 whenever you are out in nature.
               </ListItem>
-              <br />
               <ListItem>Check your body for ticks after you have been out in nature.</ListItem>
-              <br />
               <ListItem>Check your skin when you get undressed or shower/take a bath.</ListItem>
-              <br />
               <ListItem>Check your children's skin after they have been out in nature.</ListItem>
-              <br />
               <ListItem>Check your dogs, cats or any other animals in the household</ListItem>
             </BulletList>
           </InformationWrapper>

@@ -2,17 +2,19 @@ import styled from "styled-components";
 import { devices } from "./mainStyles";
 
 export const HomeContainer = styled.section`
-  width: 100vw;
+  width: 100%;
 `;
 
 export const Hero = styled.div`
   background-color: #175C4C;
-  padding: 40px 150px;
+  color: #e2e2e2;
+  padding: 10px;
 `;
 
 export const HeroParagraph = styled.p`
   font-weight: 600;
   font-size: medium;
+   margin: 30px 60px;
 
   @media ${devices.tablet} {
     font-weight: 600;
@@ -30,9 +32,8 @@ export const InformationWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  margin: 5vh 15vw;
+  margin: 30px 60px;
 `;
-
 
 export const InformationContainer = styled.div`
   width: 100%;
@@ -51,11 +52,11 @@ export const InfoParagraph = styled.p`
 
 export const BulletList = styled.ul`
   list-style-type: circle;
+  margin-left: 40px;
 `;
 
 export const ListItem = styled.li`
   font-size: 18px;
   font-weight: 400;
-  margin-left: 4vw;
-  margin-right: 7vw;
+  margin: 0 0 20px 0;
 `;
