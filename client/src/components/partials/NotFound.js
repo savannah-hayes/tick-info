@@ -1,12 +1,13 @@
 import React from "react";
 
-import LogoNav from "../../reusables/LogoNav";
+import { NotFoundHeader } from "styled-components/mainStyles";
+import Header from "../../reusables/Header";
 
 const NotFound = () => {
   return (
     <>
-      <LogoNav />
-      <h1>404 Page not found</h1>
+      <Header />
+      <NotFoundHeader>404 Page not found</NotFoundHeader>
     </>
   )
 };

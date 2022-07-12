@@ -15,7 +15,7 @@ export const CardContainer = styled.section`
   flex-direction: column;
 `;
 
-export const Header = styled.div`
+export const CountDown = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

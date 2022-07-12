@@ -1,27 +1,28 @@
 import React from "react";
 
-import LogoNav from "reusables/LogoNav"
+import Header from "reusables/Header"
 
 import SH from "../assets/SH.png";
 import SR from "../assets/SR.png";
 import FA from "../assets/FA.jpeg";
 
-import { 
+import {
   ResourcesContainer,
-  Title, 
-  LinkWrapper, 
-  ResourcesWrapper, 
-  ProfileLinkTag, 
-  LinkTag, 
+  Title,
+  LinkWrapper,
+  ResourcesWrapper,
+  ProfileLinkTag,
+  LinkTag,
   BioPics
 } from "../styled-components/resourcesStyles";
 
 const Resources = () => {
   return (
-    <ResourcesContainer>
-      <LogoNav />
-    <Title>This Site Was Created By</Title>
-      <LinkWrapper>
+    <>
+      <Header />
+      <ResourcesContainer>
+        <Title>This Site Was Created By</Title>
+        <LinkWrapper>
           <ProfileLinkTag
             target="_blank"
             rel="noopener noreferrer"
@@ -45,27 +46,28 @@ const Resources = () => {
           </ProfileLinkTag>
         </LinkWrapper>
         <ResourcesWrapper>
-        <li>
-          The data in the High Risk Area Map of reported cases of TBE per municipality in 2021 comes from the Swedish Publish Health Agency,
-          <LinkTag 
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.folkhalsomyndigheten.se/folkhalsorapportering-statistik/statistik-a-o/sjukdomsstatistik/tick-borne-encephalitis-tbe/">
-            &nbsp; ☞ Folkhälsomyndigheten
-          </LinkTag>
-        </li>
-        <br />
-        <li>
-          All the information about ticks and TBE comes the national Healtcare Guide 1177,
-          <LinkTag 
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.1177.se/en/Stockholm/other-languages/other-languages/symtomsjukdom---andra-sprak/biten-av-fasting---andra-sprak/">
-            &nbsp; ☞ 1177
-          </LinkTag>
-        </li>
-      </ResourcesWrapper>
-    </ResourcesContainer>
+          <li>
+            The data in the High Risk Area Map of reported cases of TBE per municipality in 2021 comes from the Swedish Publish Health Agency,
+            <LinkTag
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.folkhalsomyndigheten.se/folkhalsorapportering-statistik/statistik-a-o/sjukdomsstatistik/tick-borne-encephalitis-tbe/">
+              &nbsp; ☞ Folkhälsomyndigheten
+            </LinkTag>
+          </li>
+          <br />
+          <li>
+            All the information about ticks and TBE comes the national Healtcare Guide 1177,
+            <LinkTag
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.1177.se/en/Stockholm/other-languages/other-languages/symtomsjukdom---andra-sprak/biten-av-fasting---andra-sprak/">
+              &nbsp; ☞ 1177
+            </LinkTag>
+          </li>
+        </ResourcesWrapper>
+      </ResourcesContainer>
+    </>
   );
 };
 

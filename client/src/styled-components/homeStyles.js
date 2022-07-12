@@ -7,7 +7,7 @@ export const HomeContainer = styled.section`
 
 export const Hero = styled.div`
   background-color: #175C4C;
-  color: #e2e2e2;
+  color: #fff;
   padding: 10px;
 `;
 

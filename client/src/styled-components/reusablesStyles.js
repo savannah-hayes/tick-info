@@ -4,27 +4,82 @@ import { Link } from "react-router-dom";
 import { devices } from "styled-components/mainStyles";
 
 export const NavContainer = styled.header`
-
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const NavLink = styled(Link)`
   height: 10px;
-  padding: 10px;
   color: black;
+  margin-bottom: 10px;
   text-decoration: none;
+  
+  @media ${devices.tablet} {
+    font-size: 18px;
+  }
+
+  @media ${devices.desktop} {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
-export const Nav = styled.div`
+export const HamburgerMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+  width: 200px;
+  padding: 0 15px;
+  background-color: ${({ isOpen }) => (isOpen ? "white" : "#f2f2f2")};
+
+  span {
+    height: 4px;
+    width: 35px;
+    background: #000;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transform-origin: 6px;
+    transition: all 0.3s linear;
+
+    &:first-child {
+      transform: ${props => props.isOpen ? "rotate(0)" :  "rotate(45deg)"};
+    }
+
+    &:nth-child(2) {
+      transform: ${props => props.isOpen ? "translateX(0)" : "translateX(100%)"};
+      opacity: ${props => props.isOpen ? 1 : 0 };
+    }
+
+    &:nth-child(3) {
+      transform: ${props => props.isOpen ? "rotate(0)" : "rotate(-45deg)"};
+    }
+  }
+  
+  @media ${devices.desktop} {
+    margin-bottom: 65px;
+  }
+`;
+
+export const NavWrapper= styled.div`
   display: ${props => props.isOpen ? "none" : "flex"};
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  overflow: hidden;
-  top: 115px;
+  align-items: flex-end;
+  background-color: #f2f2f2;
   position: absolute;
-  background-color: #D3D3D3;
+  right: 0;
   width: 200px;
+  padding: 0 15px 10px 15px;
   height: 200px;
+  transition: all 0.3s ease-in-out;
+
+
+  @media ${devices.desktop} {
+    margin-top: -66px;
+    height: 270px;
+  }
 `;
 
 export const Logo = styled.img`

@@ -36,3 +36,7 @@ export const colorScheme = {
   secondaryBackground: "background-color: #F98700",
   accentBackground: "background-color: #e1eedd"
 };
+
+export const NotFoundHeader = styled.h1`
+  text-align: center;
+`;

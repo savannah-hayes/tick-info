@@ -1,6 +1,6 @@
 import React from "react";
 
-import LogoNav from "../reusables/LogoNav";
+import Header from "../reusables/Header";
 
 import {
   HomeContainer,
@@ -18,7 +18,7 @@ import {
 const Home = () => {
   return (
     <>
-      <LogoNav />
+      <Header />
       <HomeContainer>
         <Hero>
           <HeroHeading>TICK INFORMATION</HeroHeading>

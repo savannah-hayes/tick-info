@@ -4,13 +4,13 @@ import { addDose, handleDoseDelete, startCounter } from "../actions/cardActions"
 
 import CardForm from "../reusables/CardForm";
 import checkBrowser from "actions/checkBrowser";
-
+import Header from "reusables/Header";
 import waste from "../assets/waste.png";
 
 import { Spinner } from "../styled-components/mainStyles";
 import {
   CardContainer,
-  Header,
+  CountDown,
   CountdownTitle,
   CountdownContainer,
   CountdownWrapper,
@@ -88,8 +88,10 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
 
   return loading
     ? <Spinner></Spinner>
-    : <CardContainer>
-      <Header addTop={dosesArray.length > 0}>
+    : <> 
+    <Header />
+    <CardContainer>
+      <CountDown addTop={dosesArray.length > 0}>
         {dosesArray.length > 0 && checkBrowser !== "Safari" && isDesktop
           ?
           <CountdownTitle>Take next dose in...</CountdownTitle>
@@ -195,7 +197,7 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
           dosesArray={dosesArray}
         />
         {errorMessage && <p>{errorMessage}</p>}
-      </Header>
+      </CountDown>
       <CardWrapper>
         <CardHeader>Vaccination Record Card</CardHeader>
         <UserDetailsContainer>
@@ -237,6 +239,7 @@ const VaccineCard = ({ dosesArray, setDosesArray, setTrackDose }) => {
         </Table>
       </CardWrapper>
     </CardContainer>
+    </>
 };
 
 export default VaccineCard;

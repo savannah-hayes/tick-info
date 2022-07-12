@@ -1,6 +1,6 @@
 import React from "react";
 
-import LogoNav from "reusables/LogoNav";
+import Header from "reusables/Header";
 import removal from "../assets/removal.jpg";
 import bite from "../assets/bite.jpg";
 
@@ -16,7 +16,7 @@ import {
 const Images = () => {
   return (
     <>
-      <LogoNav />
+      <Header />
       <Title>IMAGES</Title>
       <ImageContainer>
       <ImageWrapper>
