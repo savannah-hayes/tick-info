@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import UserForm from "../reusables/UserForm";
+import Header from "../reusables/Header";
 
 import { loginUser } from "../actions/userActions";
 
@@ -31,17 +32,20 @@ const Login = ({ setLoggedIn }) => {
 
   return loading
     ? <Spinner></Spinner>
-    : <FormContainer>
-      <StyledHeading>Log in</StyledHeading>
-      <UserForm
-        email={email}
-        password={password}
-        errorMessage={errorMessage}
-        setEmail={setEmail}
-        setPassword={setPassword}
-        handleForm={onUserLogin}
-      />
-    </FormContainer>
+    : <>
+      <Header />
+      <FormContainer>
+        <StyledHeading>Log in</StyledHeading>
+        <UserForm
+          email={email}
+          password={password}
+          errorMessage={errorMessage}
+          setEmail={setEmail}
+          setPassword={setPassword}
+          handleForm={onUserLogin}
+        />
+      </FormContainer>
+    </>
 };
 
 export default Login;

@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { addDose, handleDoseDelete, startCounter } from "../actions/cardActions";
 
 import CardForm from "../reusables/CardForm";
-import checkBrowser from "actions/checkBrowser";
-import Header from "reusables/Header";
+import checkBrowser from "../actions/checkBrowser";
+import Header from "../reusables/Header";
 import waste from "../assets/waste.png";
 
 import { Spinner } from "../styled-components/mainStyles";

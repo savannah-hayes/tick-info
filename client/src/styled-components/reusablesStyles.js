@@ -58,7 +58,7 @@ export const HamburgerMenu = styled.div`
   }
   
   @media ${devices.desktop} {
-    margin-bottom: 65px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -77,7 +77,7 @@ export const NavWrapper= styled.div`
 
 
   @media ${devices.desktop} {
-    margin-top: -66px;
+    margin-top: -15px;
     height: 270px;
   }
 `;
@@ -86,18 +86,7 @@ export const Logo = styled.img`
   height: 60px;
   width: 140px;
   margin: 10px 10px 0 0;
- 
-  flex-direction: column;
   cursor: pointer;
-
-  @media ${devices.tablet}{
-    height: 120px;
-    width: 180px;
-  };
-
-  @media ${devices.desktop}{
-    width: 200px;
-  };
 `;
 
 export const Inputs = styled.input`

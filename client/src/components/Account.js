@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Header from "reusables/Header";
+import Header from "../reusables/Header";
 
 import house from "../assets/house.svg";
 import bell from "../assets/bell.svg";

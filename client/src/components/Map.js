@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Circle, Popup } from "react-leaflet";
 
-import { displayCities } from "actions/mapActions";
-import Header from "reusables/Header";
+import { displayCities } from "../actions/mapActions";
+import Header from "../reusables/Header";
 
 import { MapWrapper, HeaderText, InfoText } from "../styled-components/mapStyles"
 

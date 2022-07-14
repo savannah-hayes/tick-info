@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
 import {
@@ -10,7 +9,7 @@ import {
   InputWrapper,
   SubmitButton,
   ButtonWrapper
-} from "styled-components/reusablesStyles";
+} from "../styled-components/reusablesStyles";
 
 const UserForm = (props) => {
   const {

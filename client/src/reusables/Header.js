@@ -24,15 +24,21 @@ const Header = () => {
     { key: 4, pathname: "/resources", title: "Resources" },
   ];
 
+  const routesLinkedToAccount = ["/card", "/reminder", "/register"]
+
   useEffect(() => {
     setIsOpen(!isOpen);
     // eslint-disable-next-line 
   }, [location]);
 
+  if (routesLinkedToAccount.includes(location.pathname)) {
+    return <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate(-1)} />
+  }
+
   return (
     <>
       <NavContainer>
-      <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate("/")} />
+        <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate("/")} />
         <HamburgerMenu isOpen={isOpen} onClick={toggleHamburgerMenu}>
           <span />
           <span />
@@ -45,7 +51,7 @@ const Header = () => {
         })}
       </NavWrapper>
     </>
-  );
+  )
 };
 
 export default Header;

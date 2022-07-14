@@ -8,7 +8,7 @@ export const ReminderWrapper = styled.section`
   width: 100%;
 `;
 
-export const Header = styled.h1`
+export const Heading = styled.h1`
   color: #175c4c;
 `;
 

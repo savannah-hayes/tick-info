@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Header from "../reusables/Header";
+import UserForm from "../reusables/UserForm";
+
 import { registerOrEditUser } from "../actions/userActions";
 
-import UserForm from "../reusables/UserForm";
 import { FormContainer, StyledHeading } from "../styled-components/loginStyles"
-
 import { Spinner } from "../styled-components/mainStyles";
 
 const Register = ({ mode, method, editAccount, setEditAccount }) => {
@@ -25,23 +26,26 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
 
   return loading
     ? <Spinner></Spinner>
-    : <FormContainer>
-      <StyledHeading>{editAccount ? "Edit Profile" : "Create Profile"}</StyledHeading>
-      <UserForm
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        password={password}
-        errorMessage={errorMessage}
-        setFirstName={setFirstName}
-        setLastName={setLastName}
-        setEmail={setEmail}
-        setPassword={setPassword}
-        handleForm={onRegisterOrEditUser}
-        editAccount={editAccount}
-        setEditAccount={setEditAccount}
-      />
-    </FormContainer>
+    : <>
+      <Header />
+      <FormContainer>
+        <StyledHeading>{editAccount ? "Edit Profile" : "Create Profile"}</StyledHeading>
+        <UserForm
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          password={password}
+          errorMessage={errorMessage}
+          setFirstName={setFirstName}
+          setLastName={setLastName}
+          setEmail={setEmail}
+          setPassword={setPassword}
+          handleForm={onRegisterOrEditUser}
+          editAccount={editAccount}
+          setEditAccount={setEditAccount}
+        />
+      </FormContainer>
+    </>
 };
 
 export default Register;

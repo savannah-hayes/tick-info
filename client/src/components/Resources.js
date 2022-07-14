@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "reusables/Header"
+import Header from "../reusables/Header"
 
 import SH from "../assets/SH.png";
 import SR from "../assets/SR.png";

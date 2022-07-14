@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "reusables/Header";
+import Header from "../reusables/Header";
 import removal from "../assets/removal.jpg";
 import bite from "../assets/bite.jpg";
 
