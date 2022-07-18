@@ -20,8 +20,6 @@ export const addDose = (
 
   switch (dose) {
     case "Dose 1":
-      addDaysToNextDose = doseTaken.setDate(doseTaken.getDate() + 30);
-      break;
     case "Dose 2":
       addDaysToNextDose = doseTaken.setDate(doseTaken.getDate() + 30);
       break;
@@ -98,7 +96,7 @@ export const addDose = (
     });
 };
 
-export const handleDoseDelete = (removeDose, dosesArray, setDosesArray, setTrackDose, setErrorMessage) => {
+export const handleDoseDelete = (removeDose, dosesArray, setDosesArray, setTrackDose) => {
   const options = {
     method: "DELETE",
     headers: { "Content-Type": "application/json" }
@@ -126,8 +124,6 @@ export const handleDoseDelete = (removeDose, dosesArray, setDosesArray, setTrack
 
           keysToRemove.forEach(key => localStorage.removeItem(key));
         }
-      } else {
-        setErrorMessage(data.response);
       }
     })
     .catch((error) => console.log(error))

@@ -33,7 +33,6 @@ const Home = () => {
      
         <InformationContainer>
           <InformationWrapper>        
-          
             <SubHeading>Ticks can spread diseases</SubHeading>
             <InfoParagraph>
               Ticks are not dangerous, but they can spread diseases. One of these

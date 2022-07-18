@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {
   StyledInputField,
   InputContainer,
-  Form,
+  FormContainer,
   StyledParagraph,
   InputWrapper,
   SubmitButton,
@@ -39,7 +39,7 @@ const UserForm = (props) => {
 
   return (
     <InputContainer>
-      <Form column onSubmit={handleForm}>
+      <FormContainer column onSubmit={handleForm}>
         {displayOnlyInRegistration && (
           <>
             <InputWrapper htmlFor="firstname">
@@ -94,7 +94,7 @@ const UserForm = (props) => {
             {editAccount ? "Edit" : displayOnlyInRegistration ? "Register" : "Login" }
         </SubmitButton>
         </ButtonWrapper>
-      </Form>
+      </FormContainer>
     </InputContainer>
   );
 };

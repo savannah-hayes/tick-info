@@ -3,6 +3,16 @@ import { NavLink } from "react-router-dom";
 
 import { devices } from "styled-components/mainStyles";
 
+const Inputs = styled.input`
+  font-family: 'Source Serif Pro';
+
+  @media ${devices.desktop}{
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
 export const NavContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -96,26 +106,32 @@ export const Logo = styled.img`
   cursor: ${props => props.removePointer ? "default" : "pointer"};
 `;
 
-export const Inputs = styled.input`
-  margin: 5px;
-  font-family: 'Source Serif Pro';
+export const FormContainer = styled.form` 
+  display: flex;
+  flex-direction: ${props => props.column ? "column" : "row"};
+`;
 
-  @media ${devices.desktop}{
-    &:hover {
-      cursor: pointer;
+export const FormWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.column ? "column" : "row"};
+  justify-content: space-between;
+  width: 680px;
+  border-top: 2px solid black;
+
+  div {
+    width: 150px;
+    border: transparent;
+    border-right: 2px solid black;
+    padding: 20px;
+
+    &:last-child {
+      border-right: none;
     }
   }
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: ${props => props.column ? "column" : "row"};
-  justify-content: center;
-`;
-
 export const Select = styled.select`
-  margin: 5px;
   font-family: 'Source Serif Pro';
 
   @media ${devices.desktop}{
@@ -129,22 +145,18 @@ export const DateInput = styled(Inputs)`
 `;
 
 export const BatchInput = styled(Inputs)`
+  width: 120px;
 `;
 
-export const Button = styled.button`
-  font-family: 'Source Serif Pro';
-  margin: 5px;
-  background-color: lightblue;
-  color: #175C4C;
-  border: 1px solid #175C4C;
-  padding: 5px;
-  border-radius: 2px;
-  font-weight: 700;
+export const AddIcon = styled.img`
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin: 20px 0px 0 7px;
 
   @media ${devices.desktop}{
     &:hover {
       cursor: pointer;
-      background-color: #8ec2d1;
     }
   }
 `;
@@ -154,7 +166,7 @@ export const StyledInputField = styled.input`
   width: 320px;
   border-radius: 10px;
   border: solid #aaaaaa 1px;
-   padding: 2px 5px 2px 7px;
+  padding: 2px 5px 2px 7px;
 `;
 
 export const InputContainer = styled.div`

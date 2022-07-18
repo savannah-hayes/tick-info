@@ -24,8 +24,12 @@ export const CountDown = styled.div`
   padding: ${props => props.addTop ? "10px" : "20px 10px" };
 `;
 
-export const CountdownTitle = styled.h1`
+export const Heading = styled.h1`
   color: #175C4C;
+`;
+
+export const SubHeading = styled.h2`
+  text-align: center;
 `;
 
 export const CountdownContainer = styled.div`
@@ -95,31 +99,33 @@ export const NameLabel = styled.p`
   font-size: 14px;
 `;
 
-export const Table = styled.table`
-  width: 320px;
-  border-collapse: collapse;
-  background-color: #fafafa;
-
-  @media ${devices.mobile} { width: 375px; };
-  @media ${devices.mobileL} { width: 400px; };
-  @media ${devices.tabletS} { width: 450px; };
-  @media ${devices.tablet} { width: 500px; };
-  @media ${devices.desktop} { width: 600px; };
+export const TableContainer = styled.div`
+  display: flex;
 `;
 
-export const Label = styled.tr`
-  border-top: 2px solid #1c1c1c;
-  border-bottom: 2px solid #1c1c1c;
+export const TableWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 680px;
+  border-top: 2px solid black;
 `;
 
-export const IconWrapper = styled.th`
-  position: relative;
+export const TableItem = styled.p`
+  text-align: ${props => props.label ? "center" : "left" };
+  font-weight: ${props => props.label ? "700" : "500" };
+  font-size: ${props => props.label ? "18px" : "16px" };
+  padding: 20px;
+  margin: 0;
+  width: 150px;
+  height: 30px;
+  border-right: 2px solid black;
 
-  @media ${devices.mobileL} {
-    position: absolute;
-    margin: 10px 0 0 18px;
+  &:last-child {
+    border-right: none;
   }
+`;
 
+export const IconWrapper = styled.span`
   @media ${devices.desktop}{
     &:before {
       content: attr(data-hover);
@@ -133,8 +139,6 @@ export const IconWrapper = styled.th`
       padding: 5px 0;
       transition: opacity 1s ease-in-out;
       position: absolute;
-      z-index: 1;
-      margin: -15px 0px 0 25px;
     }
   }
   
@@ -146,24 +150,6 @@ export const IconWrapper = styled.th`
 
 export const TrashIcon = styled.img`
   width: 20px; 
-`;
-
-export const TableHeader = styled.th`
-  border-right: 1px solid black;
-  padding: 12px 0;
-
-  @media (max-width: 500px) {
-    display: ${props => props.hide ? "none" : null};
-  };
-`;
-
-export const DoseContainer = styled.tr`
-  border-top: 2px solid #1c1c1c;
-  border-bottom: 2px solid #1c1c1c;
-`;
-
-export const DeleteButton = styled.th`
-  background: none;
-  border: none;
-  font-weight: 800;
+  position: absolute;
+  margin: 28px 0px 0 10px;
 `;

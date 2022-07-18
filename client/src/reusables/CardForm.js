@@ -1,11 +1,14 @@
 import React from "react";
 
+import plus from "../assets/add.png"
+
 import {
-  Form,
+  FormContainer,
+  FormWrapper,
   Select,
   DateInput,
   BatchInput,
-  Button
+  AddIcon
 } from "styled-components/reusablesStyles";
 
 const CardForm = (props) => {
@@ -55,24 +58,35 @@ const CardForm = (props) => {
   };
 
   return (
-    <Form onSubmit={handleForm}>
+    <FormContainer>
+      <FormWrapper>
+      <div>
       <Select value={dose} onChange={(event) => setDose(event.target.value)}>
         {Object.keys(options).map((dose) => {
           return <option key={dose} value={dose} disabled={options[dose]}>{dose}</option>
         })}
       </Select>
+      </div>
+      <div>
       <DateInput
         type="date"
         value={date}
         min={setMinimumDate()}
         onChange={((event) => setDate(event.target.value))} />
+      </div>
+      <div>
       <BatchInput
         type="text"
         value={batchNumber}
-        placeholder="Optional batchnumber"
+        placeholder="Optional..."
         onChange={(event) => setBatchNumber(event.target.value)} />
-      <Button type="submit">Add Dose</Button>
-    </Form>
+      </div>
+      <div></div>
+      </FormWrapper>
+      <div>
+      <AddIcon role="button" onClick={handleForm} type="submit" src={plus}></AddIcon>
+      </div>
+    </FormContainer>
   );
 };
 
