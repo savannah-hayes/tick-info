@@ -9,7 +9,7 @@ import { registerOrEditUser } from "../actions/userActions";
 import { FormContainer, StyledHeading } from "../styled-components/loginStyles"
 import { Spinner } from "../styled-components/mainStyles";
 
-const Register = ({ mode, method, editAccount, setEditAccount }) => {
+const Register = ({ mode, method, editAccount }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
 
   const onRegisterOrEditUser = (event) => {
     event.preventDefault();
-    registerOrEditUser(firstName, lastName, email, password, mode, method, setEditAccount, setLoading, setErrorMessage, navigate)
+    registerOrEditUser(firstName, lastName, email, password, mode, method, setLoading, setErrorMessage, navigate)
   };
 
   return loading
@@ -42,7 +42,6 @@ const Register = ({ mode, method, editAccount, setEditAccount }) => {
           setPassword={setPassword}
           handleForm={onRegisterOrEditUser}
           editAccount={editAccount}
-          setEditAccount={setEditAccount}
         />
       </FormContainer>
     </>

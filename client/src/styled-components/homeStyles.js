@@ -8,7 +8,8 @@ export const HomeContainer = styled.section`
 export const Hero = styled.div`
   background-color: #175C4C;
   color: #fff;
-  padding: 10px;
+  padding: 40px;
+  margin-top: 20px;
 `;
 
 export const HeroParagraph = styled.p`

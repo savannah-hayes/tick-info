@@ -42,15 +42,17 @@ const Account = ({ setMode, setMethod, setLoggedIn, setEditAccount, totalDoses }
   const handleEditUser = () => {
     setMode(`user/${userId}`);
     setMethod("PUT");
-    setEditAccount(true);
     navigate("/register");
   };
 
   useEffect(() => {
     if (!accessToken) {
       navigate("/login");
+      setEditAccount(false);
+    } else {
+      setEditAccount(true);
     }
-  }, [accessToken, navigate]);
+  }, [accessToken, navigate, setEditAccount]);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { devices } from "styled-components/mainStyles";
 
@@ -8,12 +8,12 @@ export const NavContainer = styled.header`
   justify-content: space-between;
 `;
 
-export const NavLink = styled(Link)`
+export const Link = styled(NavLink)`
   height: 10px;
   color: black;
   margin-bottom: 10px;
   text-decoration: none;
-  
+
   @media ${devices.tablet} {
     font-size: 18px;
   }
@@ -22,6 +22,10 @@ export const NavLink = styled(Link)`
     font-size: 20px;
     margin-bottom: 20px;
   }
+
+   &.active {
+    font-weight: 600;
+  }
 `;
 
 export const HamburgerMenu = styled.div`
@@ -29,10 +33,11 @@ export const HamburgerMenu = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  border-left: ${props => props.isOpen ? "none" : "1px solid #ededed"};
   cursor: pointer;
   width: 200px;
   padding: 0 15px;
-  background-color: ${({ isOpen }) => (isOpen ? "white" : "#f2f2f2")};
+  background-color: ${props => props.isOpen ? "white" : "#fafafa"};
 
   span {
     height: 4px;
@@ -67,7 +72,9 @@ export const NavWrapper= styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
-  background-color: #f2f2f2;
+  background-color: #fafafa;
+  border-left: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
   position: absolute;
   right: 0;
   width: 200px;
@@ -86,7 +93,7 @@ export const Logo = styled.img`
   height: 60px;
   width: 140px;
   margin: 10px 10px 0 0;
-  cursor: pointer;
+  cursor: ${props => props.removePointer ? "default" : "pointer"};
 `;
 
 export const Inputs = styled.input`

@@ -30,13 +30,14 @@ const App = () => {
   const token = JSON.parse(localStorage.getItem("user"))?.accessToken;
 
   useEffect(() => {
-    setLoading(true);
     const options = {
       method: "GET",
       headers: { Authorization: token },
     };
 
     if (userId) {
+      setLoading(true);
+
       fetch(API_URL(`user/${userId}`), options)
         .then((response) => response.json())
         .then((doseData) => {
@@ -63,7 +64,6 @@ const App = () => {
               mode={mode}
               method={method}
               editAccount={editAccount}
-              setEditAccount={setEditAccount}
             />}
         />
         <Route

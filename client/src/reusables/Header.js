@@ -6,7 +6,7 @@ import {
   NavContainer,
   NavWrapper,
   HamburgerMenu,
-  NavLink,
+  Link,
   Logo
 } from "styled-components/reusablesStyles";
 
@@ -16,6 +16,7 @@ const Header = () => {
   const toggleHamburgerMenu = () => setIsOpen(!isOpen);
   const location = useLocation();
   const navigate = useNavigate();
+  const homePath = location.pathname === "/"; 
 
   const routes = [
     { key: 1, pathname: "/account", title: "Account" },
@@ -32,13 +33,18 @@ const Header = () => {
   }, [location]);
 
   if (routesLinkedToAccount.includes(location.pathname)) {
-    return <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate(-1)} />
+    return <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate("/account")} />
   }
 
   return (
     <>
       <NavContainer>
-        <Logo src={TickInfoLogo} alt="Tick info logo" onClick={() => navigate("/")} />
+        <Logo 
+          src={TickInfoLogo} 
+          alt="Tick info logo"
+          removePointer={homePath} 
+          onClick={() => homePath ? null : navigate("/")} 
+        />
         <HamburgerMenu isOpen={isOpen} onClick={toggleHamburgerMenu}>
           <span />
           <span />
@@ -47,7 +53,7 @@ const Header = () => {
       </NavContainer>
       <NavWrapper isOpen={isOpen}>
         {routes.map((route) => {
-          return <NavLink key={route.key} to={route.pathname}>{route.title}</NavLink>
+          return <Link key={route.key} to={route.pathname}>{route.title}</Link>
         })}
       </NavWrapper>
     </>
